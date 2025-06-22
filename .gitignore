@@ -1,1 +1,8 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.auto.tfvars
+*.log
+# Already included but just in case :P
 aws_credentials.auto.tfvars

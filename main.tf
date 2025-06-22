@@ -20,6 +20,16 @@ resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
 
+
+resource "aws_instance" "my-first-server" {
+  ami           = "ami-020cba7c55df1f615"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
