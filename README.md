@@ -9,8 +9,13 @@ The purpose is to learn the use of Terraform as an **Infrastructure as Code (IaC
 
 ```text
 .
+├── 00-intro
+│   ├── main.tf
+│   ├── terraform.tfstate
+│   └── terraform.tfstate.backup
+├── 01-vpc-internet-gw
+├── README.md
 ├── aws_credentials.auto.tfvars (local)
-├── main.tf
-├── terraform.tfstate
-└── terraform.tfstate.backup
+└── notes
+    └── practice_1.txt
 ```
