@@ -16,20 +16,37 @@ provider "aws" {
 }
 
 # Create a VPC
-resource "aws_vpc" "my-first-vpc" {
+resource "aws_vpc" "first-vpc" {
   cidr_block = "10.0.0.0/16"
   tags = {
-    Name = "HelloWorld"
+    Name = "Production"
+  }
+}
+
+resource "aws_vpc" "second-vpc" {
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "Dev"
   }
 }
 
 # Create a subnet
-resource "aws_subnet" "my-first-subnet" {
-  vpc_id     = aws_vpc.my-first-vpc.id
+resource "aws_subnet" "first-subnet" {
+  vpc_id     = aws_vpc.first-vpc.id
   cidr_block = "10.0.1.0/24"
 
   tags = {
-    Name = "HelloWorld"
+    Name = "prod-subnet"
+  }
+}
+
+
+resource "aws_subnet" "second-subnet" {
+  vpc_id     = aws_vpc.second-vpc.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "dev-subnet"
   }
 }
 
