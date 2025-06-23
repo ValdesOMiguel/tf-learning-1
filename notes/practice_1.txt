@@ -1,6 +1,6 @@
 1. Create VPC
 2. Create Internet Gateway
-3. Create Custom Rout Table
+3. Create Custom Route Table
 4. Create a Subnet
 5. Associate subnet with Route Tab
 6. Create Security Group to allow port 22, 80, 443
