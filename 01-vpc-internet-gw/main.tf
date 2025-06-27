@@ -47,11 +47,6 @@ resource "aws_route_table" "prod-route-table" {
     gateway_id = aws_internet_gateway.gw.id
   }
 
-  route {
-    ipv6_cidr_block        = "::/0"
-    egress_only_gateway_id = aws_internet_gateway.gw.id
-  }
-
   tags = {
     Name = "prod-route-table"
   }
@@ -131,7 +126,7 @@ resource "aws_network_interface" "web-server-nic" {
 resource "aws_eip" "one" {
   domain                    = "vpc"
   network_interface         = aws_network_interface.web-server-nic.id
-  associate_with_private_ip = "10.0.0.50"
+  associate_with_private_ip = "10.0.1.50"
   depends_on                = [aws_internet_gateway.gw]
 }
 
